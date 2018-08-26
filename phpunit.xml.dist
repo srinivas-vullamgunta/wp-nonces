@@ -1,7 +1,0 @@
-<phpunit backupGlobals="false">
-    <testsuites>
-        <testsuite>
-            <directory suffix=".php">./tests/</directory>
-        </testsuite>
-    </testsuites>
-</phpunit>
