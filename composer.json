@@ -1,0 +1,21 @@
+{
+  "name": "srinivas-vullamgunta/wp-nonces",
+  "homepage": "https://github.com/srinivas-vullamgunta/wp-nonces",
+  "description": "Wordpress nonce in a oops concepts.",
+  "keywords": [
+	"wordpress",
+	"nonce",
+	"OOP",
+	"wp"
+  ],
+  "license": "MIT",
+  "type": "wordpress-plugin",
+  "authors": [
+	{
+	  "name": "srinivas-vullamgunta",
+	  "email": "srinivas.vullamgunta@gmail.com"
+	}
+  ],
+  "require": {
+  }
+}
