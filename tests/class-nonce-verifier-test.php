@@ -6,7 +6,7 @@
  */
 class Nonce_Verifier_Test extends WP_UnitTestCase {
 	private static $DEFAULT_ACTION   = 'default_action';
-	private static $DEFAULT_URL      = 'https://github.com/srinivas-vullamgunta/wp-nonces';
+	private static $DEFAULT_URL      = 'https://github.com/srinivas-vullamgunta/wp-nonce';
 
 	private static $DEFAULT_KEY_NAME = '_wpnonce';
 

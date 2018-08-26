@@ -1,7 +1,3 @@
-[![Latest Stable Version](https://poser.pugx.org/srinivas-vullamgunta/wp-nonces/v/stable)](https://packagist.org/packages/wsrinivas-vullamgunta/wp-nonces)
-[![Latest Unstable Version](https://poser.pugx.org/srinivas-vullamgunta/wp-nonces/v/unstable)](https://packagist.org/packages/wsrinivas-vullamgunta/wp-nonces)
-[![License](https://poser.pugx.org/srinivas-vullamgunta/wp-nonces/license)](https://packagist.org/packages/wsrinivas-vullamgunta/wp-nonces)
-
 # wp-nonces
 Use wordpress nonces functions in a object oriented concepts.
 
@@ -104,7 +100,7 @@ if ( wp-nonces_Verifier::verify_ajax_referer( $defaultAction ) ) {
 5. **Go to plugin's folder**
  
   ```bash
-  cd vendor/wsrinivas-vullamgunta/wp-nonces
+  cd vendor/srinivas-vullamgunta/wp-nonces
   ```
 6. **Run phpunit** to test
   
