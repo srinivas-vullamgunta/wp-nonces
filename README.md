@@ -80,13 +80,13 @@ $nonce ->setAction('default_action');
 $nonce->wpVerifyNonce($nonce);
 ```
 
-Tests
-
-Run phpunit to test for below cases.
+# **Run phpunit** to test
 
  ```bash
   phpunit 
   ```
+
+# Test Cases
 
 ```php
 private static $nonce;
