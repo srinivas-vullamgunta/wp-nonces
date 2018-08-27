@@ -1,6 +1,5 @@
-# WpNonceOOP
-A compose package which serves the functionality of working with WordPress Nonces in object oriented environment
-
+# Wordpress Nonce OOP
+A composer package which serves the functionality of WordPress Nonces with object oriented environment
 
 Table of contents:
  * [Requirements](#requirements)
