@@ -7,16 +7,16 @@ Table of contents:
  * [Installation](#installation)
  * [Usage](#usage)
 
-1. Requirements
+# Requirements
 
 * PHP >= 5.4.0
 * WordPress >= 4.6
 
-2. Installation
+# Installation
 
 You can install this class in both on command-line or by pasting it into wordpress plugin directory.
 
-3. via Command-line
+# via Command-line
 
 Using [Composer](https://getcomposer.org/), add Custom Nonce Class to your plugin's dependencies.
 
