@@ -61,7 +61,6 @@ To generate Nonce Url
 $nonce = new WpNonce(); 
 $nonce ->setAction('default_action');
 $nonce->wpGenerateNonceUrl('https://github.com/srinivas-vullamgunta/wp-nonces', '_wpnonce'));
-$nonce->wpNonceField('_wpnonce', referrer, true);
 ```
 
 To retrieve a nonce field.
