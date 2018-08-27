@@ -36,7 +36,7 @@ class WpNonce implements WpNonceInterface
     * @return string
     */
     public function wpGenerateNonceUrl($actionurl, $key = '_wpnonce' ) { 
-        return wp_nonce_url( $actionurl, $this->action, $key );
+       return wp_nonce_url( $actionurl, $this->action, $key ); 
     }
 
     /**

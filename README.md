@@ -14,66 +14,99 @@ Table of contents:
 
 # Installation
 
-You can install this class in both on command-line or by pasting it into wordpress plugin directory.
+Add this package as requirement at your composer.json file and
+then run 'composer update'
 
-# via Command-line
+```json
+"srinivas-vullamgunta/wp-nonces": "1.0.*"
+```
 
-Using [Composer](https://getcomposer.org/), add Custom Nonce Class to your plugin's dependencies.
+Or directly run
 
-```sh
+```bash
 composer require srinivas-vullamgunta/wp-nonces
 ```
+
 # Usage
 
 Setup:
 
 ```php
-<?php 
+$vendor = dirname(__DIR__).'/vendor/';
+if (! realpath($vendor)) {
+    die('Please install via Composer before running tests.');
+}
+require_once $vendor.'autoload.php';
+unset($vendor);
+```
 
-require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
+#Instantiate an object of the class
 
-use Nonces\WpNonce;
-
-
-// Instantiate an object of the class
+```php
 $nonce = new WpNonce();
 ```
 # Examples
 
-Adding a nonce to a URL:
+
+To create Nonce 
 
 ```php
-$url="/../wp-admin/post.php?post=48";
-$complete_url = $nonce->wp_nonce_url( $url, 'edit-post_'.$post->ID );
+$nonce = new WpNonce();  
+$nonce->wpCreateNonce('default_action');
 ```
 
-Adding a nonce to a form:
+To generate Nonce Url
 
 ```php
-$nonce->get_wp_nonce_field( 'delete-post_'.$post_id );
+$nonce = new WpNonce(); 
+$nonce ->setAction('default_action');
+$nonce->wpGenerateNonceUrl('https://github.com/srinivas-vullamgunta/wp-nonces', '_wpnonce'));
+$nonce->wpNonceField('_wpnonce', referrer, true);
 ```
 
-creating a nonce:
+To retrieve a nonce field.
 
 ```php
-$newnonce = $nonce->wp_create_nonce( 'action_'.$post->id );
+$nonce = new WpNonce(); 
+$nonce ->setAction('default_action');
+$nonce->wpNonceField('_wpnonce', referrer, true);
 ```
 
-Verifying a nonce:
+To Verify nonce
 
 ```php
-$nonce->wp_verify_nonce_field( 'delete-post_'.$post_id );
+$nonce = new WpNonce(); 
+$nonce ->setAction('default_action');
+$nonce->wpVerifyNonce($nonce);
 ```
 
-Verifying a nonce passed in an AJAX request:
+Tests
+
+Run phpunit to test for below cases.
+
+ ```bash
+  phpunit 
+  ```
 
 ```php
-$nonce->wp_check_ajax_referer( 'post-comment' );
+private static $nonce;
+
+public function testSetAction() {
+	$expected = -1;
+	self::$nonce = new WpNonce();
+	$this->assertSame($expected, self::$nonce->setAction());
+}
+
+public function testWpVerifyNonce() {  
+	self::$nonce = new WpNonce();
+	$nonceVerifyVal = '';
+	$this->assertFalse(self::$nonce->nonceAys($nonceVerifyVal));
+}
 ```
 
-Verifying a nonce passed in some other context:
+## Thanks to
+* [Wordpress Nonces Documentation](https://codex.wordpress.org/WordPress_Nonces)
 
-```php
-$nonce->wp_check_admin_referer( $_REQUEST['my_nonce'], 'edit-post_'.$post->ID );
-```
+## License
 
+[MIT](http://opensource.org/licenses/MIT)
